@@ -27,7 +27,7 @@ clear; clc; close all;
 fs   = 8000;          % Working sample rate [Hz]
 fnyq = fs/2;          % Nyquist frequency [Hz] = 4000
 
-inputFile = 'y_fir_stable.wav';
+inputFile = '../Phase3_Echo_FIR_IIR/y_fir_stable.wav';
 
 if ~isfile(inputFile)
     error('Input file "%s" was not found. First generate Phase-3 FIR output.', inputFile);

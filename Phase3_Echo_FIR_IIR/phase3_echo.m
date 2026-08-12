@@ -17,14 +17,14 @@ fs = 8000;                       % target working rate [Hz]
 
 %% ---------------- 1) Load source signals ------------------------
 % Voice: clean anti-aliased output of Phase 2 (already at 8000 Hz)
-[voice, fs_voice] = audioread('x_antialiased.wav');
+[voice, fs_voice] = audioread('../Phase2_Sampling_AntiAliasing/x_antialiased.wav');
 if fs_voice ~= fs
     voice = resample(voice, fs, fs_voice);
 end
 voice = voice(:,1);              % force mono (column)
 
 % Music: richest Phase-1 signal (50 harmonics) at 44100 Hz
-[music, fs_music] = audioread('x_c.wav');
+[music, fs_music] = audioread('../Phase1_Additive_Synthesis/x_c.wav');
 music = music(:,1);
 % Resample music to the Phase-2 working rate (8000 Hz)
 music = resample(music, fs, fs_music);
